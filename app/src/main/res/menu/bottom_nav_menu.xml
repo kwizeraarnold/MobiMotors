@@ -8,12 +8,12 @@
 
     <item
         android:id="@+id/navigation_discover"
-        android:icon="@drawable/ic_discover"
+        android:icon="@drawable/ic_search"
         android:title="@string/title_discover" />
 
     <item
         android:id="@+id/navigation_favourate"
-        android:icon="@drawable/ic_favourate"
+        android:icon="@drawable/ic_favorite_border"
         android:title="@string/title_favourate" />
 
     <item

@@ -31,6 +31,7 @@ public class Main2Activity extends AppCompatActivity {
 
         //setup the bottom navigation to be used with the navigation controller
         NavigationUI.setupWithNavController(navView, navController);
+
     }
 
 }
