@@ -10,7 +10,7 @@ public class FavouratesViewModel extends ViewModel {
 
     public FavouratesViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is notifications fragment");
+        mText.setValue("Apply advanced filters to the search");
     }
 
     public LiveData<String> getText() {

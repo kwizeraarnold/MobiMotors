@@ -10,7 +10,7 @@ public class DiscoverViewModel extends ViewModel {
 
     public DiscoverViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is dashboard fragment");
+        mText.setValue("What describes your lifestyle?");
     }
 
     public LiveData<String> getText() {

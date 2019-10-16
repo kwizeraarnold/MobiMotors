@@ -13,12 +13,12 @@
 
     <item
         android:id="@+id/navigation_favourate"
-        android:icon="@drawable/ic_favorite_border"
+        android:icon="@drawable/ic_filter"
         android:title="@string/title_favourate" />
 
     <item
         android:id="@+id/navigation_profile"
-        android:icon="@drawable/ic_profile"
+        android:icon="@drawable/ic_user_profile"
         android:title="My Profile"/>
 
 </menu>
