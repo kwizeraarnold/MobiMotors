@@ -4,6 +4,22 @@
     <string name="title_home">Home</string>
     <string name="title_discover">Discover</string>
     <string name="title_favourate">Filter</string>
+    <string name="signup">Sign Up</string>
+    <string name="signupinfo">Create an account to favorite cars and receive price drop notification
+    </string>
+    <string name="hintEmail">Email</string>
+    <string name="hintPassword">Password</string>
+    <string name="hintConfrimPassword">Confrim Password</string>
+    <string name="createaccount">Create Account</string>
+    <string name="shop_guest">Shop as guest</string>
+    <string name="have_account">Have an account?</string>
+    <string name="login">Log in</string>
+    <string name="policy">Privacy policy</string>
+    <string name="welcome">Welcome to MobiMotors</string>
+    <string name="welcome_subtitle">Login to continue</string>
+    <string name="no_account">no account?</string>
+    <string name="sign_up">sign up today!</string>
+    <string name="forgotpassword">forgot password?</string>
     <string-array name="cars">
         <item>All Cars</item>
         <item>New Cars</item>

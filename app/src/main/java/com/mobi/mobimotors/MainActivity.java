@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
-        initSpinner();
+//        initSpinner();
     }
     private  void initSpinner(){
         spProvince = findViewById(R.id.spinner1);

@@ -4,4 +4,7 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="spacing_large">35dp</dimen>
     <dimen name="spacing_middle">10dp</dimen>
+    <dimen name="signup">30sp</dimen>
+    <dimen name="signup_margin">15dp</dimen>
+    <dimen name="signup_subtitle">15sp</dimen>
 </resources>
