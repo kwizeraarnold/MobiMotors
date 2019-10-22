@@ -20,6 +20,10 @@
     <string name="no_account">no account?</string>
     <string name="sign_up">sign up today!</string>
     <string name="forgotpassword">forgot password?</string>
+    <string name="settings">Settings</string>
+    <string name="feedback">Feedback</string>
+    <string name="logout">Log Out</string>
+    <string name="privacy_policy">Privacy Policy</string>
     <string-array name="cars">
         <item>All Cars</item>
         <item>New Cars</item>

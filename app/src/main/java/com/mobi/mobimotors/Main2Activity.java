@@ -27,7 +27,8 @@ public class Main2Activity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
 
         //changes the action bar title when a navigation icon is clicked
-        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
+         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
+
 
         //setup the bottom navigation to be used with the navigation controller
         NavigationUI.setupWithNavController(navView, navController);
