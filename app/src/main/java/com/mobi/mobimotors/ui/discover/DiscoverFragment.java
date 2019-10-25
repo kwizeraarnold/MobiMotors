@@ -17,8 +17,8 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.mobi.mobimotors.ActivityHelper;
 import com.mobi.mobimotors.R;
-import com.mobi.mobimotors.activityHelper;
 import com.mobi.mobimotors.adapters.CategoriesAdapter;
 import com.mobi.mobimotors.models.Category;
 
@@ -89,7 +89,7 @@ public class DiscoverFragment extends Fragment {
 
 
                 Toast.makeText(getActivity(),category.getName(), Toast.LENGTH_LONG).show();
-                startActivity(new Intent(getActivity(), activityHelper.class));
+                startActivity(new Intent(getActivity(), ActivityHelper.class));
             }
         });
         recyclerView.setAdapter(categoriesAdapter);
