@@ -17,17 +17,16 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.mobi.mobimotors.R;
 import com.mobi.mobimotors.adapters.CategoriesAdapter;
-import com.mobi.mobimotors.models.Car;
 import com.mobi.mobimotors.models.Category;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class DiscoverFragment extends Fragment {
 
     private DiscoverViewModel discoverViewModel;
     private CategoriesAdapter categoriesAdapter;
-    List<Category> categories;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -43,34 +42,60 @@ public class DiscoverFragment extends Fragment {
                 textView.setText(s);
             }
         });
-        categories = new ArrayList<Category>();
-        RecyclerView recyclerView = root.findViewById(R.id.categories_recyclerView);
-        categoriesAdapter = new CategoriesAdapter(getActivity(), categories);
+//        List<Category> categories = new ArrayList<Category>();
+//        categories.add(new Category("style and luxury","6 seats"));
+//        categories.add(new Category("style and luxury","6 seats"));
+        List<Category> category1 = Arrays.asList(new Category("Small Family","5 seats"),new Category("Big Family","6 seats"));
+        List<Category> category2 = Arrays.asList(new Category("Good Fuel Comsumption",""),new Category("Car Shape",""));
+        List<Category> category3 = Arrays.asList(new Category("Luxury",""),new Category("Confort",""));
+        List<Category> category4 = Arrays.asList(new Category("Upcountry Car",""));
+//        RecyclerView recyclerView = root.findViewById(R.id.family_recyclerView);
+//        categoriesAdapter = new CategoriesAdapter(getActivity(), categories);
+//        RecyclerView.LayoutManager manager = new GridLayoutManager(getActivity(), 2);
+//        recyclerView.setLayoutManager(manager);
+////        recyclerView.addItemDecoration(new GridSpacingItemDecoration(1, dpToPx(4), true));
+//        recyclerView.setItemAnimator(new DefaultItemAnimator());
+//        recyclerView.setBackgroundResource(R.color.amber_50);
+//        recyclerView.setAdapter(categoriesAdapter);
+//        populateAdapter();
+        makeAdapter(category1,R.id.family_recyclerView,root);
+        makeAdapter(category2,R.id.city_worker_recyclerView,root);
+        makeAdapter(category3,R.id.luxury_recyclerView,root);
+        makeAdapter(category4,R.id.work_horse_recyclerView,root);
+        return root;
+    }
+
+    /**
+     * this methods associates recyclerviews with their adapters and arraylists
+     * @param list
+     * @param recyclerViewId
+     */
+    public void makeAdapter(List list,int recyclerViewId,View root){
+        RecyclerView recyclerView = root.findViewById(recyclerViewId);
+//        categoriesAdapter = new CategoriesAdapter(getActivity(), list);
         RecyclerView.LayoutManager manager = new GridLayoutManager(getActivity(), 2);
         recyclerView.setLayoutManager(manager);
 //        recyclerView.addItemDecoration(new GridSpacingItemDecoration(1, dpToPx(4), true));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setBackgroundResource(R.color.amber_50);
-        recyclerView.setAdapter(categoriesAdapter);
-        populateAdapter();
+        recyclerView.setAdapter(new CategoriesAdapter(getActivity(), list));
 
-        return root;
     }
 
 
-    private void populateAdapter() {
-        categories.add(new Category("style and luxury","6 seats"));
-        categories.add(new Category("style and luxury","6 seats"));
-        categories.add(new Category("style and luxury","6 seats"));
-        categories.add(new Category("style and luxury","6 seats"));
-        categories.add(new Category("style and luxury","6 seats"));
-        categories.add(new Category("style and luxury","6 seats"));
-        categories.add(new Category("style and luxury","6 seats"));
-        categories.add(new Category("style and luxury","6 seats"));
-        categories.add(new Category("style and luxury","6 seats"));
-        categories.add(new Category("style and luxury","6 seats"));
-        categories.add(new Category("style and luxury","6 seats"));
-        categories.add(new Category("style and luxury","6 seats"));
-        categoriesAdapter.notifyDataSetChanged();
-    }
+//    private void populateAdapter() {
+//        categories.add(new Category("style and luxury","6 seats"));
+//        categories.add(new Category("style and luxury","6 seats"));
+//        categories.add(new Category("style and luxury","6 seats"));
+//        categories.add(new Category("style and luxury","6 seats"));
+//        categories.add(new Category("style and luxury","6 seats"));
+//        categories.add(new Category("style and luxury","6 seats"));
+//        categories.add(new Category("style and luxury","6 seats"));
+//        categories.add(new Category("style and luxury","6 seats"));
+//        categories.add(new Category("style and luxury","6 seats"));
+//        categories.add(new Category("style and luxury","6 seats"));
+//        categories.add(new Category("style and luxury","6 seats"));
+//        categories.add(new Category("style and luxury","6 seats"));
+//        categoriesAdapter.notifyDataSetChanged();
+//    }
 }
