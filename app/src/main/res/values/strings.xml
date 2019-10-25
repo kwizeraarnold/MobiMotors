@@ -24,6 +24,10 @@
     <string name="feedback">Feedback</string>
     <string name="logout">Log Out</string>
     <string name="privacy_policy">Privacy Policy</string>
+    <string name="how_much">How Much Can You Spend?</string>
+    <string name="what_do_look_for">What Do You Look For Most in a  Car?</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
     <string-array name="cars">
         <item>All Cars</item>
         <item>New Cars</item>
