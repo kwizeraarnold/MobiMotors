@@ -1,10 +1,12 @@
 package com.mobi.mobimotors.ui.discover;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
@@ -16,6 +18,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.mobi.mobimotors.R;
+import com.mobi.mobimotors.activityHelper;
 import com.mobi.mobimotors.adapters.CategoriesAdapter;
 import com.mobi.mobimotors.models.Category;
 
@@ -70,7 +73,7 @@ public class DiscoverFragment extends Fragment {
      * @param list
      * @param recyclerViewId
      */
-    public void makeAdapter(List list,int recyclerViewId,View root){
+    public void makeAdapter(final List list, int recyclerViewId, View root){
         RecyclerView recyclerView = root.findViewById(recyclerViewId);
 //        categoriesAdapter = new CategoriesAdapter(getActivity(), list);
         RecyclerView.LayoutManager manager = new GridLayoutManager(getActivity(), 2);
@@ -78,7 +81,19 @@ public class DiscoverFragment extends Fragment {
 //        recyclerView.addItemDecoration(new GridSpacingItemDecoration(1, dpToPx(4), true));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setBackgroundResource(R.color.amber_50);
-        recyclerView.setAdapter(new CategoriesAdapter(getActivity(), list));
+        CategoriesAdapter categoriesAdapter = new CategoriesAdapter(getActivity(), list);
+        categoriesAdapter.setOnClick(new CategoriesAdapter.OnItemClicked() {
+            @Override
+            public void onItemClick(int position) {
+                Category category = (Category) list.get(position);
+
+
+                Toast.makeText(getActivity(),category.getName(), Toast.LENGTH_LONG).show();
+                startActivity(new Intent(getActivity(), activityHelper.class));
+            }
+        });
+        recyclerView.setAdapter(categoriesAdapter);
+
 
     }
 

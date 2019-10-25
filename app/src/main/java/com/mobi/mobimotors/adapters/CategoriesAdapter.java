@@ -22,6 +22,10 @@ List<Category> items;
         this.context = context;
         this.items = items;
     }
+    private OnItemClicked onClick;
+    public interface OnItemClicked{
+        void onItemClick(int position);
+    }
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int i){
         View v = LayoutInflater.from(context)
@@ -29,10 +33,17 @@ List<Category> items;
         return new MyViewHolder(v);
     }
 
-    public void onBindViewHolder(MyViewHolder viewHolder, int position){
+    public void onBindViewHolder(MyViewHolder viewHolder, final int position){
         Category car = items.get(position);
         viewHolder.label.setText(car.getLabel());
         viewHolder.name.setText(car.getName());
+        viewHolder.name.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onClick.onItemClick(position);
+            }
+        });
+
         //TODO load image using glide
 //        Glide.with(context).load("https://images.unsplash.com/photo-1528402671825-9a525ab8b5b9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80")
 //                .error(R.drawable.ic_whatsapp)
@@ -54,5 +65,9 @@ List<Category> items;
             name = itemView.findViewById(R.id.category_name);
 
         }
+    }
+    public void setOnClick(OnItemClicked onClick)
+    {
+        this.onClick=onClick;
     }
 }

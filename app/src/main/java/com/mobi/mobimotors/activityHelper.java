@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class activityHelper extends AppCompatActivity {
+public class ActivityHelper extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
