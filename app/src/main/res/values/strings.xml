@@ -26,6 +26,13 @@
     <string name="privacy_policy">Privacy Policy</string>
     <string name="how_much">How Much Can You Spend?</string>
     <string name="what_do_look_for">What Do You Look For Most in a  Car?</string>
+    <string name="last">LIKE AT LEAST TWO</string>
+    <string name="What_Catches_Your_Eye">What Catches Your Eye?</string>
+    <string name="skip">SKIP</string>
+    <string name="like">LIKE</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string-array name="cars">

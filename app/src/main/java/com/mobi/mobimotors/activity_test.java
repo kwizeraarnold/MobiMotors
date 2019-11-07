@@ -9,6 +9,6 @@ public class activity_test extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_price);
+        setContentView(R.layout.fragment_final_step);
     }
 }
