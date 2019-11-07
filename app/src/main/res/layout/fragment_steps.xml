@@ -62,15 +62,6 @@
             </RadioGroup>
         </LinearLayout>
 
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignRight="@id/container"
-            android:layout_marginRight="10dp"
-            app:layout_constraintBottom_toBottomOf="@+id/subtile"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/title" />
-
         <TextView
             android:id="@+id/textView5"
             android:layout_width="match_parent"
@@ -101,27 +92,34 @@
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent" />
 
-        <TextView
-            android:id="@+id/title"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:orientation="vertical"
+            android:id="@+id/linearLayout_fragmentSteps"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
-            android:text="Max Towing"
-            android:textColor="@android:color/black"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/textView6"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView5" />
+            app:layout_constraintTop_toBottomOf="@+id/textView5"
+            >
 
-        <TextView
-            android:id="@+id/subtile"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@id/title"
-            android:text="Pickups that tow 10,000+ pounds"
-            android:textColor="@color/grey_40"
-            app:layout_constraintStart_toStartOf="@+id/title"
-            app:layout_constraintTop_toBottomOf="@+id/title" />
+        </LinearLayout>
+
+<!--        <androidx.recyclerview.widget.RecyclerView-->
+<!--            android:id="@+id/recyclerView_fragmentSteps"-->
+<!--            android:layout_width="409dp"-->
+<!--            android:layout_height="477dp"-->
+<!--            android:layout_marginStart="8dp"-->
+<!--            android:layout_marginTop="8dp"-->
+<!--            android:layout_marginEnd="8dp"-->
+<!--            android:layout_marginBottom="8dp"-->
+<!--            app:layout_constraintBottom_toTopOf="@+id/textView6"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.571"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/textView5" />-->
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
