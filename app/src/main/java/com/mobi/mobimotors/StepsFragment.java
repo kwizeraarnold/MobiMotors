@@ -9,17 +9,19 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.mobi.mobimotors.models.Question;
+
+import java.util.ArrayList;
 
 
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link StepsFragment.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link StepsFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class StepsFragment extends Fragment {
+    ArrayList<Question> questions;
 
     private OnFragmentInteractionListener mListener;
 
@@ -30,14 +32,77 @@ public class StepsFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        String category = "Small Family";
+
+        makeQuestions(category);
+
+    }
+
+    private void makeQuestions(String category) {
+        questions = new ArrayList<>();
+        switch (category){
+            case "Small Family":
+                questions.add(new Question("Best for booster seats","Tested by certified staticians"));
+                questions.add(new Question("Best for booster seats","Tested by certified staticians"));
+                questions.add(new Question("Best for booster seats","Tested by certified staticians"));
+                questions.add(new Question("Best for booster seats","Tested by certified staticians"));
+                break;
+            case "Big Family":
+                questions.add(new Question("Best for booster seats","Tested by certified staticians"));
+                questions.add(new Question("Best for booster seats","Tested by certified staticians"));
+                questions.add(new Question("Best for booster seats","Tested by certified staticians"));
+                questions.add(new Question("Best for booster seats","Tested by certified staticians"));
+                break;
+            case "Luxury":
+                questions.add(new Question("Best for booster seats","Tested by certified staticians"));
+                questions.add(new Question("Best for booster seats","Tested by certified staticians"));
+                questions.add(new Question("Best for booster seats","Tested by certified staticians"));
+                questions.add(new Question("Best for booster seats","Tested by certified staticians"));
+                break;
+            default:
+                questions.add(new Question("Just show me whats popular","I have no preferene"));
+        }
 
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        //inflate the question layout
+//        View row = getLayoutInflater().inflate(R.layout.row_question,null);
+
         // Inflate the layout for this fragment
         View root = inflater.inflate(R.layout.fragment_steps, container, false);
+
+        //populate the radio group with questions
+        final LinearLayout rootLinearLayout = root.findViewById(R.id.linearLayout_fragmentSteps);
+        //loop through the questions and add them to the group
+        for(Question q: questions){
+            View row = getLayoutInflater().inflate(R.layout.row_question,null);
+            TextView title =row.findViewById(R.id.TextView_question_title);
+            title.setText(q.getName());
+
+            TextView subtitle =row.findViewById(R.id.TextView_question_subtile);
+            subtitle.setText(q.getDescription());
+            rootLinearLayout.addView(row);
+        }
+        for(final View v:getViewsByTag(rootLinearLayout,"Radio")){
+            ((RadioButton)v).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+//                    Toast.makeText(getActivity(), view.get, Toast.LENGTH_SHORT).show();
+
+                    for(View v1:getViewsByTag(rootLinearLayout,"Radio")){
+                        if(!view.equals(v1)){
+                            ((RadioButton)v1).setChecked(false);
+
+                        }
+//
+                    }
+                }
+            });
+        }
+
         root.findViewById(R.id.btn_next).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -85,5 +150,23 @@ public class StepsFragment extends Fragment {
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
+    }
+    //copied from statck overflow https://stackoverflow.com/questions/8817377/android-how-to-find-multiple-views-with-common-attribute
+    private static ArrayList<View> getViewsByTag(ViewGroup root, String tag){
+        ArrayList<View> views = new ArrayList<View>();
+        final int childCount = root.getChildCount();
+        for (int i = 0; i < childCount; i++) {
+            final View child = root.getChildAt(i);
+            if (child instanceof ViewGroup) {
+                views.addAll(getViewsByTag((ViewGroup) child, tag));
+            }
+
+            final Object tagObj = child.getTag();
+            if (tagObj != null && tagObj.equals(tag)) {
+                views.add(child);
+            }
+
+        }
+        return views;
     }
 }

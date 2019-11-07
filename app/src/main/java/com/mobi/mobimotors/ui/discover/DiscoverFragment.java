@@ -81,7 +81,7 @@ public class DiscoverFragment extends Fragment {
 //        recyclerView.addItemDecoration(new GridSpacingItemDecoration(1, dpToPx(4), true));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setBackgroundResource(R.color.amber_50);
-        CategoriesAdapter categoriesAdapter = new CategoriesAdapter(getActivity(), list);
+        final CategoriesAdapter categoriesAdapter = new CategoriesAdapter(getActivity(), list);
         categoriesAdapter.setOnClick(new CategoriesAdapter.OnItemClicked() {
             @Override
             public void onItemClick(int position) {
@@ -89,7 +89,9 @@ public class DiscoverFragment extends Fragment {
 
 
                 Toast.makeText(getActivity(),category.getName(), Toast.LENGTH_LONG).show();
-                startActivity(new Intent(getActivity(), ActivityHelper.class));
+                Intent intent = new Intent(getActivity(), ActivityHelper.class);
+                intent.putExtra("category",category.getName());//send the chosen category to the activity helper class
+                startActivity(intent);
             }
         });
         recyclerView.setAdapter(categoriesAdapter);
