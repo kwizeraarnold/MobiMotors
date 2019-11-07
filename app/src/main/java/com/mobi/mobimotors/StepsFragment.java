@@ -32,12 +32,36 @@ public class StepsFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        String category = "Small Family";
 
+        makeQuestions(category);
+
+    }
+
+    private void makeQuestions(String category) {
         questions = new ArrayList<>();
-        questions.add(new Question("Best for booster seats","Tested by certified staticians"));
-        questions.add(new Question("Best for booster seats","Tested by certified staticians"));
-        questions.add(new Question("Best for booster seats","Tested by certified staticians"));
-        questions.add(new Question("Best for booster seats","Tested by certified staticians"));
+        switch (category){
+            case "Small Family":
+                questions.add(new Question("Best for booster seats","Tested by certified staticians"));
+                questions.add(new Question("Best for booster seats","Tested by certified staticians"));
+                questions.add(new Question("Best for booster seats","Tested by certified staticians"));
+                questions.add(new Question("Best for booster seats","Tested by certified staticians"));
+                break;
+            case "Big Family":
+                questions.add(new Question("Best for booster seats","Tested by certified staticians"));
+                questions.add(new Question("Best for booster seats","Tested by certified staticians"));
+                questions.add(new Question("Best for booster seats","Tested by certified staticians"));
+                questions.add(new Question("Best for booster seats","Tested by certified staticians"));
+                break;
+            case "Luxury":
+                questions.add(new Question("Best for booster seats","Tested by certified staticians"));
+                questions.add(new Question("Best for booster seats","Tested by certified staticians"));
+                questions.add(new Question("Best for booster seats","Tested by certified staticians"));
+                questions.add(new Question("Best for booster seats","Tested by certified staticians"));
+                break;
+            default:
+                questions.add(new Question("Just show me whats popular","I have no preferene"));
+        }
 
     }
 

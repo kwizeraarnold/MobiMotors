@@ -6,6 +6,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.net.Uri;
 import android.os.Bundle;
+import android.widget.Toast;
 
 public class ActivityHelper extends AppCompatActivity implements StepsFragment.OnFragmentInteractionListener {
     StepsFragment stepsFragment;
@@ -20,6 +21,9 @@ public class ActivityHelper extends AppCompatActivity implements StepsFragment.O
 
         setContentView(R.layout.activity_helper);
         fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        Bundle bundle = getIntent().getExtras();
+        String chosenCategory = bundle.getString("category");
+        Toast.makeText(this,chosenCategory,Toast.LENGTH_SHORT).show();
 
         fragmentTransaction.replace(R.id.fragment_root,stepsFragment);
         fragmentTransaction.commit();
