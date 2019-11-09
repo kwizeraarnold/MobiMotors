@@ -37,23 +37,27 @@
             app:layout_constraintStart_toStartOf="parent">
 
             <RadioGroup
+                android:id="@+id/RadioGroup_newOrOldOrBoth"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
                 <RadioButton
+                    android:id="@+id/RadioButton_Used"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Used" />
 
                 <RadioButton
+                    android:id="@+id/RadioButton_New"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="New" />
 
                 <RadioButton
+                    android:id="@+id/RadioButton_Both"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="10dp"

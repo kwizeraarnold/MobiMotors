@@ -15,6 +15,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.mobi.mobimotors.models.Category;
 import com.mobi.mobimotors.models.Question;
 
 import java.util.ArrayList;
@@ -22,8 +23,9 @@ import java.util.ArrayList;
 
 public class StepsFragment extends Fragment {
     ArrayList<Question> questions;
-
+    String category ="";
     private OnFragmentInteractionListener mListener;
+    RadioGroup radioGroup;
 
     public StepsFragment() {
         // Required empty public constructor
@@ -32,9 +34,8 @@ public class StepsFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        String category = "Small Family";
+//         = "Small Family";
 
-        makeQuestions(category);
 
     }
 
@@ -42,7 +43,7 @@ public class StepsFragment extends Fragment {
         questions = new ArrayList<>();
         switch (category){
             case "Small Family":
-                questions.add(new Question("Best for booster seats","Tested by certified staticians"));
+                questions.add(new Question("Best for dfdf seats","Tested by certified staticians"));
                 questions.add(new Question("Best for booster seats","Tested by certified staticians"));
                 questions.add(new Question("Best for booster seats","Tested by certified staticians"));
                 questions.add(new Question("Best for booster seats","Tested by certified staticians"));
@@ -68,11 +69,20 @@ public class StepsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        //get the chosen category from the data passed to this fragment by the activity
+       final Bundle bundle = getArguments();
+        category = bundle.getString("category");
+        //generate questions based on chosen category
+        makeQuestions(category);
+
         //inflate the question layout
 //        View row = getLayoutInflater().inflate(R.layout.row_question,null);
 
         // Inflate the layout for this fragment
         View root = inflater.inflate(R.layout.fragment_steps, container, false);
+        /*      get a reference to the new or old or both Radio Group*/
+         radioGroup = root.findViewById(R.id.RadioGroup_newOrOldOrBoth);
+
 
         //populate the radio group with questions
         final LinearLayout rootLinearLayout = root.findViewById(R.id.linearLayout_fragmentSteps);
@@ -106,7 +116,24 @@ public class StepsFragment extends Fragment {
         root.findViewById(R.id.btn_next).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ((ActivityHelper)getActivity()).gotoNextFragment();
+                //get the selected question
+                for(View v1:getViewsByTag(rootLinearLayout,"Radio")){
+                    RadioButton button = (RadioButton)v1;
+                    if(button.isChecked()){
+                        //if this button is checked get the text of the linear layout in the parent
+                        View view = ((LinearLayout) button.getParent()).findViewById(R.id.TextView_question_title);
+                        String text = ((TextView)view).getText().toString();
+                        Toast.makeText(getActivity(), text, Toast.LENGTH_SHORT).show();
+                        break;
+                    }
+                }
+
+                //get the selected new or old or both
+                radioGroup.getCheckedRadioButtonId();
+               String t = ((RadioButton)(radioGroup.findViewById(radioGroup.getCheckedRadioButtonId()))).getText().toString();
+                Toast.makeText(getActivity(),t, Toast.LENGTH_SHORT).show();
+
+                ((ActivityHelper)getActivity()).gotoNextFragment(ActivityHelper.priceFragment);
 
             }
         });
