@@ -43,6 +43,8 @@ public class CarListActivity extends AppCompatActivity {
             @Override
             public void onItemClick(View view, Car obj, int position) {
                 Intent i = new Intent(getApplicationContext(),CarDetailsActivity.class);
+                i.putExtra("carName",obj.getName());
+
                 startActivity(i);
             }
         });

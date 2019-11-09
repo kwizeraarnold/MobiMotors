@@ -60,6 +60,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onItemClick(View view, Car obj, int position) {
                 Intent i = new Intent(getActivity(), CarDetailsActivity.class);
+                i.putExtra("carName",obj.getName());
                 startActivity(i);
             }
         });
