@@ -1,5 +1,6 @@
 package com.mobi.mobimotors.ui.home;
 
+import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.TypedValue;
@@ -14,6 +15,7 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.mobi.mobimotors.CarDetailsActivity;
 import com.mobi.mobimotors.R;
 import com.mobi.mobimotors.adapters.CarsAdapter;
 import com.mobi.mobimotors.models.Car;
@@ -52,7 +54,19 @@ public class HomeFragment extends Fragment {
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setBackgroundResource(R.color.amber_50);
         recyclerView.setAdapter(carsAdapter);
+
+        carsAdapter.setOnItemClickListener(new CarsAdapter.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(View view, Car obj, int position) {
+                Intent i = new Intent(getActivity(), CarDetailsActivity.class);
+                startActivity(i);
+            }
+        });
         populateAdapter();
+
+
+
 
         return root;
     }
