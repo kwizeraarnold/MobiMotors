@@ -1,0 +1,556 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CarDetailsActivity">
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/gas"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/snapshop"
+        app:srcCompat="@drawable/ic_local_gas_station_black_24dp" />
+
+    <ImageView
+        android:id="@+id/seat"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="50dp"
+        app:layout_constraintStart_toEndOf="@+id/textView14"
+        app:layout_constraintTop_toTopOf="@+id/textView14"
+        app:srcCompat="@drawable/ic_event_seat_black_24dp" />
+
+    <ImageView
+        android:id="@+id/engine"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gas"
+        app:srcCompat="@drawable/ic_local_gas_station_black_24dp" />
+
+    <ImageView
+        android:id="@+id/drivetrain"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="5dp"
+        app:layout_constraintStart_toEndOf="@+id/engine_desc"
+        app:layout_constraintTop_toBottomOf="@+id/seat"
+        app:srcCompat="@drawable/ic_local_gas_station_black_24dp" />
+
+    <ImageView
+        android:id="@+id/exterior_color"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/engine"
+        app:srcCompat="@drawable/ic_local_gas_station_black_24dp" />
+
+    <ImageView
+        android:id="@+id/interior_color"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="30dp"
+        app:layout_constraintStart_toEndOf="@+id/exterior_color_desc"
+        app:layout_constraintTop_toBottomOf="@+id/drivetrain"
+        app:srcCompat="@drawable/ic_local_gas_station_black_24dp" />
+
+    <ImageView
+        android:id="@+id/transmission"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/exterior_color"
+        app:srcCompat="@drawable/ic_local_gas_station_black_24dp" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/book"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="BOOK" />
+
+        <Button
+            android:id="@+id/check"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="CKECK AVAILABILITY" />
+    </LinearLayout>
+
+    <RatingBar
+        android:id="@+id/rating_bar"
+        style="?android:attr/ratingBarStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:numStars="5"
+        android:rating="2.5"
+        android:stepSize="0.5"
+        app:layout_constraintBottom_toBottomOf="@+id/textView11"
+        app:layout_constraintStart_toEndOf="@+id/textView11"
+        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+    <RatingBar
+        android:id="@+id/rating_bar2"
+        style="?android:attr/ratingBarStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:numStars="5"
+        android:rating="2.5"
+        android:stepSize="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seller_name" />
+
+    <RatingBar
+        android:id="@+id/rating_bar3"
+        style="?android:attr/ratingBarStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:numStars="5"
+        android:rating="2.5"
+        android:stepSize="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/customer_reviews" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="$30,553"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/car_title" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Est. payment"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+    <TextView
+        android:id="@+id/car_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="New 2019 Toyota RAV4 XLE"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="282 reviews"
+        app:layout_constraintBottom_toBottomOf="@+id/rating_bar"
+        app:layout_constraintStart_toEndOf="@+id/rating_bar"
+        app:layout_constraintTop_toTopOf="@+id/rating_bar" />
+
+    <TextView
+        android:id="@+id/snapshop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Snapshot"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+    <TextView
+        android:id="@+id/gas_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/gas"
+        android:layout_marginTop="8dp"
+        android:text="Gasoline"
+        app:layout_constraintStart_toStartOf="@+id/textView14"
+        app:layout_constraintTop_toBottomOf="@+id/textView14" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MPG/Fuel Type"
+        app:layout_constraintStart_toEndOf="@+id/gas"
+        app:layout_constraintTop_toTopOf="@+id/gas" />
+
+    <TextView
+        android:id="@+id/seat_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Seats"
+        app:layout_constraintStart_toEndOf="@+id/seat"
+        app:layout_constraintTop_toTopOf="@+id/seat" />
+
+    <TextView
+        android:id="@+id/seats_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="5"
+        app:layout_constraintStart_toEndOf="@+id/seat"
+        app:layout_constraintTop_toBottomOf="@+id/seat_name" />
+
+    <TextView
+        android:id="@+id/engine_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Engine"
+        app:layout_constraintStart_toEndOf="@+id/engine"
+        app:layout_constraintTop_toTopOf="@+id/engine" />
+
+    <TextView
+        android:id="@+id/engine_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2.5L 14 16V PDI DOHC"
+        app:layout_constraintStart_toEndOf="@+id/engine"
+        app:layout_constraintTop_toBottomOf="@+id/engine_title" />
+
+    <TextView
+        android:id="@+id/drivetrain_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Drivetrain"
+        app:layout_constraintStart_toEndOf="@+id/drivetrain"
+        app:layout_constraintTop_toTopOf="@+id/drivetrain" />
+
+    <TextView
+        android:id="@+id/drivetrain_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="FWD"
+        app:layout_constraintStart_toEndOf="@+id/drivetrain"
+        app:layout_constraintTop_toBottomOf="@+id/drivetrain_title" />
+
+    <TextView
+        android:id="@+id/exterior_color_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Exterior Color"
+        app:layout_constraintStart_toEndOf="@+id/exterior_color"
+        app:layout_constraintTop_toTopOf="@+id/exterior_color" />
+
+    <TextView
+        android:id="@+id/exterior_color_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Silver Sky Metallic"
+        app:layout_constraintStart_toEndOf="@+id/exterior_color"
+        app:layout_constraintTop_toBottomOf="@+id/exterior_color_title" />
+
+    <TextView
+        android:id="@+id/interior_color_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Interior Color"
+        app:layout_constraintStart_toEndOf="@+id/interior_color"
+        app:layout_constraintTop_toBottomOf="@+id/drivetrain" />
+
+    <TextView
+        android:id="@+id/interior_color_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Black"
+        app:layout_constraintStart_toEndOf="@+id/interior_color"
+        app:layout_constraintTop_toBottomOf="@+id/interior_color_title" />
+
+    <TextView
+        android:id="@+id/transmission_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Transmission"
+        app:layout_constraintStart_toEndOf="@+id/transmission"
+        app:layout_constraintTop_toTopOf="@+id/transmission" />
+
+    <TextView
+        android:id="@+id/transmission_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="8-Speed Automatic"
+        app:layout_constraintStart_toEndOf="@+id/transmission"
+        app:layout_constraintTop_toBottomOf="@+id/transmission_title" />
+
+    <TextView
+        android:id="@+id/features"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Key Features"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/transmission" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" * Adaptive Cruise control"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/features" />
+
+    <TextView
+        android:id="@+id/allfeatures"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="View all features(88)"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider3" />
+
+    <TextView
+        android:id="@+id/about_seller"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="About the Seller"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider4" />
+
+    <TextView
+        android:id="@+id/seller_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Permian Toyota"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/about_seller" />
+
+    <TextView
+        android:id="@+id/rating_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="(1.0)"
+        app:layout_constraintBottom_toBottomOf="@+id/rating_bar2"
+        app:layout_constraintStart_toEndOf="@+id/rating_bar2"
+        app:layout_constraintTop_toTopOf="@+id/rating_bar2" />
+
+    <TextView
+        android:id="@+id/reviews"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2 reviews"
+        app:layout_constraintBottom_toBottomOf="@+id/rating_number"
+        app:layout_constraintStart_toEndOf="@+id/rating_number"
+        app:layout_constraintTop_toTopOf="@+id/rating_number" />
+
+    <TextView
+        android:id="@+id/seller_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Kampala"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rating_bar2" />
+
+    <TextView
+        android:id="@+id/seller_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+256703042490"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seller_location" />
+
+    <TextView
+        android:id="@+id/seller_details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Seller details and Website"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seller_number" />
+
+    <TextView
+        android:id="@+id/customer_reviews"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Customer Reviews"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seller_details" />
+
+    <TextView
+        android:id="@+id/customer_reviews_rates"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="(4.5)"
+        app:layout_constraintBottom_toBottomOf="@+id/rating_bar3"
+        app:layout_constraintStart_toEndOf="@+id/rating_bar3"
+        app:layout_constraintTop_toTopOf="@+id/rating_bar3" />
+
+    <TextView
+        android:id="@+id/customer_reviews_numbers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="282 reviews"
+        app:layout_constraintBottom_toBottomOf="@+id/customer_reviews_rates"
+        app:layout_constraintStart_toEndOf="@+id/customer_reviews_rates"
+        app:layout_constraintTop_toTopOf="@+id/customer_reviews_rates" />
+
+    <TextView
+        android:id="@+id/review1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="confort"
+        app:layout_constraintEnd_toStartOf="@+id/review1_number"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rating_bar3" />
+
+    <TextView
+        android:id="@+id/review1_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="4.2/5"
+        app:layout_constraintBottom_toBottomOf="@+id/review1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/review1" />
+
+    <TextView
+        android:id="@+id/review2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Performance"
+        app:layout_constraintEnd_toStartOf="@+id/review2_number"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/review1" />
+
+    <TextView
+        android:id="@+id/review2_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="4.3/5"
+        app:layout_constraintBottom_toBottomOf="@+id/review2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/review2"
+        app:layout_constraintTop_toTopOf="@+id/review2" />
+
+    <TextView
+        android:id="@+id/review3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Exterior Styling"
+        app:layout_constraintEnd_toStartOf="@+id/review3_number"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/review2" />
+
+    <TextView
+        android:id="@+id/review3_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="4.5/5"
+        app:layout_constraintBottom_toBottomOf="@+id/review3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/review3"
+        app:layout_constraintTop_toTopOf="@+id/review3" />
+
+    <TextView
+        android:id="@+id/review4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Interior Design"
+        app:layout_constraintEnd_toStartOf="@+id/review4_number"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/review3" />
+
+    <TextView
+        android:id="@+id/review4_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="4.3/5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/review4"
+        app:layout_constraintTop_toTopOf="@+id/review4" />
+
+    <TextView
+        android:id="@+id/review5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Value for money"
+        app:layout_constraintEnd_toStartOf="@+id/review5_number"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/review4" />
+
+    <TextView
+        android:id="@+id/review5_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="4.4/5"
+        app:layout_constraintBottom_toBottomOf="@+id/review5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/review5"
+        app:layout_constraintTop_toTopOf="@+id/review5" />
+
+    <TextView
+        android:id="@+id/review6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Reliability"
+        app:layout_constraintEnd_toStartOf="@+id/review6_number"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/review5" />
+
+    <TextView
+        android:id="@+id/review6_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="3.6/5"
+        app:layout_constraintBottom_toBottomOf="@+id/review6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/review6"
+        app:layout_constraintTop_toTopOf="@+id/review6" />
+
+    <View
+        android:id="@+id/divider3"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView16" />
+
+    <View
+        android:id="@+id/divider4"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/allfeatures" />
+
+        <TextView
+            android:id="@+id/view_all_reviews"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="View all customer review"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/review6" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>
