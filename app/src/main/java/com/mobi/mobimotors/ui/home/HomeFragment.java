@@ -7,8 +7,11 @@ import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.DefaultItemAnimator;
@@ -19,6 +22,7 @@ import com.mobi.mobimotors.CarDetailsActivity;
 import com.mobi.mobimotors.R;
 import com.mobi.mobimotors.adapters.CarsAdapter;
 import com.mobi.mobimotors.models.Car;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,6 +32,7 @@ public class HomeFragment extends Fragment {
     private HomeViewModel homeViewModel;
     private List<Car> cars;
     private CarsAdapter carsAdapter;
+    Toolbar toolbar;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -35,7 +40,6 @@ public class HomeFragment extends Fragment {
                 ViewModelProviders.of(this).get(HomeViewModel.class);
 
         View root = inflater.inflate(R.layout.fragment_home, container, false);
-
 //        final TextView textView = root.findViewById(R.id.text_home);
 //
 //        homeViewModel.getText().observe(this, new Observer<String>() {
@@ -52,7 +56,6 @@ public class HomeFragment extends Fragment {
         recyclerView.setLayoutManager(manager);
 //        recyclerView.addItemDecoration(new GridSpacingItemDecoration(1, dpToPx(4), true));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.setBackgroundResource(R.color.amber_50);
         recyclerView.setAdapter(carsAdapter);
 
         carsAdapter.setOnItemClickListener(new CarsAdapter.OnItemClickListener() {
@@ -69,17 +72,18 @@ public class HomeFragment extends Fragment {
 
 
 
+
         return root;
     }
 
 
     private void populateAdapter() {
-        cars.add(new Car("toyota wish",2000000));
-        cars.add(new Car("toyota beast",20000000));
-        cars.add(new Car("toyota mastag",5000000));
-        cars.add(new Car("toyota mastag",5000000));
-        cars.add(new Car("toyota mastag",5000000));
-        cars.add(new Car("toyota mastag",5000000));
+        cars.add(new Car("Toyota Wishg",200000));
+        cars.add(new Car("Toyota Beast",200000));
+        cars.add(new Car("Toyota Mastag",500000));
+        cars.add(new Car("Toyota Mastag",500000));
+        cars.add(new Car("Toyota Mastag",500000));
+        cars.add(new Car("Toyota Mastag",500000));
         carsAdapter.notifyDataSetChanged();
     }
     /**

@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.mobi.mobimotors.R;
 import com.mobi.mobimotors.models.Category;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -44,11 +45,11 @@ List<Category> items;
             }
         });
 
-        //TODO load image using glide
-//        Glide.with(context).load("https://images.unsplash.com/photo-1528402671825-9a525ab8b5b9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80")
-//                .error(R.drawable.ic_whatsapp)
-//                .override(175,182)
-//                .into(viewHolder.image);
+        viewHolder.image.setVisibility(View.VISIBLE);
+        Picasso.get().load(R.drawable.image_car1)
+            .placeholder(R.drawable.image_car1)
+            .error(R.drawable.image_car4)
+            .into(viewHolder.image);
     }
     public int getItemCount(){
         return items.size();

@@ -9,16 +9,20 @@ import android.widget.TextView;
 
 import com.mobi.mobimotors.R;
 import com.mobi.mobimotors.models.Car;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class CarsAdapter extends RecyclerView.Adapter<CarsAdapter.MyViewHolder>{
 Context context;
 List<Car> items;
+    Picasso picasso = Picasso.get();
+
     public CarsAdapter(Context context, List<Car>items){
         this.context = context;
         this.items = items;
@@ -58,6 +62,7 @@ List<Car> items;
 //                .error(R.drawable.ic_whatsapp)
 //                .override(175,182)
 //                .into(viewHolder.image);
+        //load images into image views using picassa
     }
     public int getItemCount(){
         return items.size();
@@ -67,7 +72,7 @@ List<Car> items;
     public class MyViewHolder extends RecyclerView.ViewHolder{
         ImageView image;
         TextView price,name;
-        CardView lyt_parent;
+        ConstraintLayout lyt_parent;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             image = itemView.findViewById(R.id.car_image);

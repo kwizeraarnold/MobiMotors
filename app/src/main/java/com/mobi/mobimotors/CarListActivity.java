@@ -24,18 +24,17 @@ public class CarListActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_home);
+        setContentView(R.layout.activity_car_list);
 
         cars = new ArrayList<Car>();
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
-        carsAdapter = new CarsAdapter(getApplicationContext(),cars);
+        carsAdapter = new CarsAdapter(this,cars);
         RecyclerView.LayoutManager manager = new GridLayoutManager(getApplicationContext(),1);
         recyclerView.setLayoutManager(manager);
 //        recyclerView.addItemDecoration(new GridSpacingItemDecoration(1, dpToPx(4), true));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.setBackgroundResource(R.color.amber_50);
+//        recyclerView.setBackgroundResource(R.color.amber_50);
         recyclerView.setAdapter(carsAdapter);
-        populateAdapter();
 
         // on item list clicked
         carsAdapter.setOnItemClickListener(new CarsAdapter.OnItemClickListener() {
@@ -48,6 +47,8 @@ public class CarListActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+        populateAdapter();
+
     }
 
 

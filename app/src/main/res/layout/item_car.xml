@@ -1,117 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<androidx.cardview.widget.CardView
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/smsp_disabled_color"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:background="@color/white"
     android:id="@+id/lyt_parent"
-    android:layout_width="wrap_content"
-    android:layout_height="149dp"
-    android:layout_marginTop="2dp"
-    android:elevation="8dp"
-    app:cardCornerRadius="3dp"
-    app:cardPreventCornerOverlap="false"
-    app:cardUseCompatPadding="true"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="0.48000002">
+    android:layout_marginBottom="3dp">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="411dp"
-        android:layout_height="142dp">
+    <ImageView
+        android:id="@+id/car_image"
+        android:layout_width="140dp"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_user_profile" />
 
-        <TextView
-            android:id="@+id/car_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
-            android:text="Toyota"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/guideline2"
-            app:layout_constraintHorizontal_bias="0.09"
-            app:layout_constraintStart_toEndOf="@+id/car_image"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.078" />
+    <TextView
+        android:id="@+id/used"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="USED"
+        android:layout_marginLeft="3dp"
+        android:textSize="10sp"
+        android:textColor="@color/grey_800"
+        app:layout_constraintStart_toEndOf="@+id/car_image"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/car_image"
-            android:layout_width="175dp"
-            android:layout_height="182dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/guideline"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"
-            android:src="@drawable/image_shop_11"
-            />
+    <TextView
+        android:id="@+id/car_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2019 Toyota Sienna"
+        android:layout_marginLeft="3dp"
+        android:layout_marginTop="5dp"
+        android:textSize="14sp"
+        android:textColor="@color/grey_800"
+        app:layout_constraintStart_toEndOf="@+id/car_image"
+        app:layout_constraintTop_toBottomOf="@+id/used" />
 
-<!--        <ImageButton-->
-<!--            android:id="@+id/imageButton"-->
-<!--            android:layout_width="44dp"-->
-<!--            android:layout_height="31dp"-->
-<!--            android:layout_marginStart="8dp"-->
-<!--            android:layout_marginLeft="8dp"-->
-<!--            android:layout_marginTop="8dp"-->
-<!--            android:layout_marginEnd="8dp"-->
-<!--            android:layout_marginRight="8dp"-->
-<!--            android:layout_marginBottom="8dp"-->
-<!--            app:layout_constraintBottom_toBottomOf="parent"-->
-<!--            app:layout_constraintEnd_toStartOf="@+id/guideline2"-->
-<!--            app:layout_constraintHorizontal_bias="0.03"-->
-<!--            app:layout_constraintStart_toStartOf="@+id/guideline"-->
-<!--            app:layout_constraintTop_toTopOf="parent"-->
-<!--            app:layout_constraintVertical_bias="0.85"-->
-<!--            android:background="?attr/selectableItemBackgroundBorderless"-->
-<!--            android:tint="@color/grey_60"-->
-<!--            app:srcCompat="@drawable/ic_favorites" />-->
+    <TextView
+        android:id="@+id/car_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="$26,400"
+        android:layout_marginLeft="3dp"
+        android:textSize="20sp"
+        android:textColor="@android:color/black"
+        app:layout_constraintStart_toEndOf="@+id/car_image"
+        app:layout_constraintTop_toBottomOf="@+id/car_name" />
 
-        <TextView
-            android:id="@+id/car_price"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
-            android:text="2000,000"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/guideline2"
-            app:layout_constraintHorizontal_bias="0.09"
-            app:layout_constraintStart_toEndOf="@+id/car_image"
-            app:layout_constraintTop_toTopOf="@+id/car_image"
-            app:layout_constraintVertical_bias="0.474" />
+    <TextView
+        android:id="@+id/miliage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="26,032 mi"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="9dp"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/car_price"
+        app:layout_constraintTop_toBottomOf="@+id/car_name" />
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_begin="190dp" />
+    <TextView
+        android:id="@+id/distanceAway"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="566 mi away"
+        android:layout_marginRight="5dp"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:visibility="visible"
-            app:layout_constraintGuide_begin="377dp" />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="2dp"
+        app:srcCompat="@drawable/ic_favorite_border_black_24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.constraintlayout.widget.Barrier
-            android:id="@+id/barrier2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:barrierDirection="left" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.cardview.widget.CardView>
-
-
-    <!--</android.support.constraint.ConstraintLayout>-->
+</androidx.constraintlayout.widget.ConstraintLayout>
