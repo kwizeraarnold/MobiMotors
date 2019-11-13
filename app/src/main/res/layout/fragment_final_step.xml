@@ -78,7 +78,8 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent">
 
-                    <TextView
+                    <Button
+                        android:id="@+id/skip_button"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -86,7 +87,8 @@
                         android:text="@string/skip"
                         android:textAlignment="center" />
 
-                    <TextView
+                    <Button
+                        android:id="@+id/like_button"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -96,7 +98,7 @@
                 </LinearLayout>
 
                 <TextView
-                    android:id="@+id/textView9"
+                    android:id="@+id/price"
                     android:layout_width="248dp"
                     android:layout_height="15dp"
                     android:layout_marginStart="5dp"
@@ -115,7 +117,7 @@
                     android:layout_marginStart="5dp"
                     android:layout_marginTop="2dp"
                     android:text="Used 2018 Chrysler Pacifica"
-                    app:layout_constraintBottom_toTopOf="@+id/textView9"
+                    app:layout_constraintBottom_toTopOf="@+id/price"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/car" />
