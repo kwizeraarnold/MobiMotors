@@ -103,6 +103,7 @@
                     android:textSize="20sp"
                     android:layout_marginTop="10dp"
                     android:textColor="@color/white"
+                    android:onClick="bookcarAction"
                     android:background="@color/colorPrimary"/>
             </LinearLayout>
 
@@ -118,7 +119,7 @@
                 android:layout_marginLeft="10dp"
                 app:layout_constraintBottom_toBottomOf="@+id/textView11"
                 app:layout_constraintStart_toEndOf="@+id/textView11"
-                app:layout_constraintTop_toBottomOf="@+id/textView13" />
+                app:layout_constraintTop_toBottomOf="@+id/detail_car_price" />
 
             <RatingBar
                 android:id="@+id/rating_bar2"
@@ -146,7 +147,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/customer_reviews" />
 
             <TextView
-                android:id="@+id/textView13"
+                android:id="@+id/detail_car_price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="$30,553"
@@ -167,7 +168,7 @@
                 android:layout_marginLeft="10dp"
                 android:textColor="@android:color/holo_blue_bright"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView13" />
+                app:layout_constraintTop_toBottomOf="@+id/detail_car_price" />
 
             <TextView
                 android:id="@+id/car_title"
@@ -669,7 +670,7 @@
             app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
             <ImageView
-                android:id="@+id/image"
+                android:id="@+id/detail_car_image"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:fitsSystemWindows="true"
@@ -678,6 +679,7 @@
                 app:srcCompat="@drawable/ic_user_profile" />
 
             <View
+                android:id="@+id/detail_car_image1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/overlay_dark_30" />

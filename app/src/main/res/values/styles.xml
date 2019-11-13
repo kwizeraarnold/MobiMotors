@@ -23,5 +23,8 @@
         <!--color of the background-->
         <item name="android:background">@android:color/white</item>
     </style>
+    <style name="Button.Primary.Borderless" parent="@style/Widget.AppCompat.Button.Borderless.Colored">
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
 
 </resources>

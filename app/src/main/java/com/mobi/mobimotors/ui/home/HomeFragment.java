@@ -27,6 +27,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.material.snackbar.Snackbar;
 import com.mobi.mobimotors.CarDetailsActivity;
+import com.mobi.mobimotors.CarListActivity;
 import com.mobi.mobimotors.R;
 import com.mobi.mobimotors.adapters.CarsAdapter;
 import com.mobi.mobimotors.models.Car;
@@ -40,8 +41,8 @@ import java.util.List;
 
 public class HomeFragment extends Fragment {
 
-    private static final String BASE_URL ="http://www.blackbooksuganda.com" ;
-    private static final String API_URL ="http://www.blackbooksuganda.com/api" ;
+    public static final String BASE_URL ="http://www.blackbooksuganda.com" ;
+    public static final String API_URL ="http://www.blackbooksuganda.com/api" ;
     private HomeViewModel homeViewModel;
     private List<Car> carList;
     private CarsAdapter carsAdapter;
@@ -75,8 +76,10 @@ public class HomeFragment extends Fragment {
 
             @Override
             public void onItemClick(View view, Car obj, int position) {
-                Intent i = new Intent(getActivity(), CarDetailsActivity.class);
-                i.putExtra("carName",obj.getName());
+                Intent i = new Intent(getActivity(),CarDetailsActivity.class);
+                i.putExtra("carObject",obj);
+                Toast.makeText(getActivity(), obj.toString(), Toast.LENGTH_SHORT).show();
+
                 startActivity(i);
             }
         });
@@ -124,13 +127,14 @@ public class HomeFragment extends Fragment {
                         int carId = obj.getInt("car_id");
                         if(carIdd==carId){
                             continue;
-                        }
+                        }//TODO make the api bring a car with all its images
                         carIdd = carId;
                         String name = obj.getString("make")+" "+obj.getString("model");
                         String price = obj.getString("init_price");
                         String imageUrl =BASE_URL+ obj.getString("path");
                         Log.d("IMAGE",imageUrl);
-                        carList.add(new Car(name,price,imageUrl));//TODO get car name and price
+                        Log.d("ID",String.valueOf(carId));
+                        carList.add(new Car(name,price,imageUrl,String.valueOf(carId)));
                     }
                     //make the changes appear on the ui
                     carsAdapter.notifyDataSetChanged();

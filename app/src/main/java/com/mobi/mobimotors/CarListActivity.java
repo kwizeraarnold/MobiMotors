@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.mobi.mobimotors.adapters.CarsAdapter;
@@ -21,10 +23,12 @@ public class CarListActivity extends AppCompatActivity {
     private ArrayList<Car> cars;
     private CarsAdapter carsAdapter;
 
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_car_list);
+
 
         cars = new ArrayList<Car>();
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
@@ -42,7 +46,8 @@ public class CarListActivity extends AppCompatActivity {
             @Override
             public void onItemClick(View view, Car obj, int position) {
                 Intent i = new Intent(getApplicationContext(),CarDetailsActivity.class);
-                i.putExtra("carName",obj.getName());
+                i.putExtra("carObject",obj);
+                Toast.makeText(CarListActivity.this, obj.toString(), Toast.LENGTH_SHORT).show();
 
                 startActivity(i);
             }
@@ -53,9 +58,9 @@ public class CarListActivity extends AppCompatActivity {
 
 
     private void populateAdapter() {
-        cars.add(new Car("toyota wish","2000000"));
-        cars.add(new Car("toyota wish","2000000"));
-        cars.add(new Car("toyota wish","2000000"));
+        cars.add(new Car("toyota wish","2000000",null));
+        cars.add(new Car("toyota wish","2000000",null));
+        cars.add(new Car("toyota wish","2000000",null));
 
         carsAdapter.notifyDataSetChanged();
     }
