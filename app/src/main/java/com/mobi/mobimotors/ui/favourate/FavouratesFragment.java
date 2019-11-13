@@ -19,41 +19,33 @@ import com.mobi.mobimotors.MainActivity;
 import com.mobi.mobimotors.R;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class FavouratesFragment extends Fragment {
 
     private FavouratesViewModel notificationsViewModel;
     private SmartMaterialSpinner spProvince;
-    private List<String> provinceList;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         notificationsViewModel =
                 ViewModelProviders.of(this).get(FavouratesViewModel.class);
         View root = inflater.inflate(R.layout.activity_search, container, false);
-//        final TextView textView = root.findViewById(R.id.text_notifications);
-//        notificationsViewModel.getText().observe(this, new Observer<String>() {
-//            @Override
-//            public void onChanged(@Nullable String s) {
-//                textView.setText(s);
-//            }
-//        });
-        initSpinner(root);
+        initSpinner(root,R.id.spinner1,Arrays.<String>asList("Toyota,Mitshubis"));
+        initSpinner(root,R.id.spinner2,Arrays.<String>asList("Toyota,Mitshubis"));
+        initSpinner(root,R.id.spinner3,Arrays.<String>asList("Toyota,Mitshubis"));
+
         return root;
     }
 
-    private  void initSpinner(View root){
-        spProvince = root.findViewById(R.id.spinner1);
-        provinceList = new ArrayList<>();
-        provinceList.add("Kwizera");
-        provinceList.add("Nicholas");
-        provinceList.add("Arnold");
-        spProvince.setItem(provinceList);
-        spProvince.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+    private  void initSpinner(View root, int resource, final List<String>optionsList){
+      SmartMaterialSpinner  spinner = root.findViewById(resource);
+        spinner.setItem(optionsList);
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getActivity(),provinceList.get(position),
+                Toast.makeText(getActivity(),optionsList.get(position),
                         Toast.LENGTH_SHORT).show();
             }
 
