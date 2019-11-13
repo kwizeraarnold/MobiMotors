@@ -53,12 +53,10 @@ public class CarListActivity extends AppCompatActivity {
 
 
     private void populateAdapter() {
-        cars.add(new Car("toyota wish",2000000));
-        cars.add(new Car("toyota beast",20000000));
-        cars.add(new Car("toyota mastag",5000000));
-        cars.add(new Car("toyota mastag",5000000));
-        cars.add(new Car("toyota mastag",5000000));
-        cars.add(new Car("toyota mastag",5000000));
+        cars.add(new Car("toyota wish","2000000"));
+        cars.add(new Car("toyota wish","2000000"));
+        cars.add(new Car("toyota wish","2000000"));
+
         carsAdapter.notifyDataSetChanged();
     }
     }

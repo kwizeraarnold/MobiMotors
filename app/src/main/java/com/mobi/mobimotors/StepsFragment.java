@@ -6,6 +6,7 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -116,24 +117,34 @@ public class StepsFragment extends Fragment {
         root.findViewById(R.id.btn_next).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String q1 ="",q2 ="";
                 //get the selected question
                 for(View v1:getViewsByTag(rootLinearLayout,"Radio")){
                     RadioButton button = (RadioButton)v1;
                     if(button.isChecked()){
                         //if this button is checked get the text of the linear layout in the parent
                         View view = ((LinearLayout) button.getParent()).findViewById(R.id.TextView_question_title);
-                        String text = ((TextView)view).getText().toString();
-                        Toast.makeText(getActivity(), text, Toast.LENGTH_SHORT).show();
+                        q1 = ((TextView)view).getText().toString();
                         break;
                     }
                 }
+                if(q1==""){
+                    Toast.makeText(getActivity(),"Please select one feature", Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
                 //get the selected new or old or both
-                radioGroup.getCheckedRadioButtonId();
-               String t = ((RadioButton)(radioGroup.findViewById(radioGroup.getCheckedRadioButtonId()))).getText().toString();
-                Toast.makeText(getActivity(),t, Toast.LENGTH_SHORT).show();
 
-                ((ActivityHelper)getActivity()).gotoNextFragment(ActivityHelper.priceFragment);
+                int checkedRadioButtonId = radioGroup.getCheckedRadioButtonId();
+                if(checkedRadioButtonId!=-1){//if value == -1, no radio button has been selected
+//                    Log.d("ID",String.valueOf(checkedRadioButtonId));
+                    String t = ((RadioButton)(radioGroup.findViewById(checkedRadioButtonId))).getText().toString();
+                    ((ActivityHelper)getActivity()).gotoNextFragment(ActivityHelper.priceFragment);
+                }else{
+                    Toast.makeText(getActivity(),"Please select on New or Used cars or Both", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
 
             }
         });

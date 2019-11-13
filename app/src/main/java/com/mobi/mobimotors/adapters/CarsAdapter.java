@@ -47,7 +47,7 @@ List<Car> items;
 
     public void onBindViewHolder(MyViewHolder viewHolder, final int position){
         Car car = items.get(position);
-        viewHolder.price.setText(car.getPriceAsString());
+        viewHolder.price.setText(car.getPrice());
         viewHolder.name.setText(car.getName());
         viewHolder.lyt_parent.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,6 +63,7 @@ List<Car> items;
 //                .override(175,182)
 //                .into(viewHolder.image);
         //load images into image views using picassa
+        Picasso.get().load(car.getImageUrl()).into(viewHolder.image);
     }
     public int getItemCount(){
         return items.size();

@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.mobi.mobimotors.R;
@@ -38,7 +39,7 @@ List<Category> items;
         Category car = items.get(position);
         viewHolder.label.setText(car.getLabel());
         viewHolder.name.setText(car.getName());
-        viewHolder.name.setOnClickListener(new View.OnClickListener() {
+        viewHolder.root.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onClick.onItemClick(position);
@@ -59,11 +60,13 @@ List<Category> items;
     public class MyViewHolder extends RecyclerView.ViewHolder{
         ImageView image;
         TextView label,name;
+        LinearLayout root;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             image = itemView.findViewById(R.id.category_image);
             label = itemView.findViewById(R.id.category_label);
             name = itemView.findViewById(R.id.category_name);
+            root = itemView.findViewById(R.id.linearLayout_root_category);
 
         }
     }

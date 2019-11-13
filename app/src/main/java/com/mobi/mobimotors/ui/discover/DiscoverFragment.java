@@ -88,7 +88,7 @@ public class DiscoverFragment extends Fragment {
                 Category category = (Category) list.get(position);
 
 
-                Toast.makeText(getActivity(),category.getName(), Toast.LENGTH_LONG).show();
+//                Toast.makeText(getActivity(),category.getName(), Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(getActivity(), ActivityHelper.class);
                 intent.putExtra("category",category.getName());//send the chosen category to the activity helper class
                 startActivity(intent);
