@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat
+<androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,6 +8,8 @@
     android:orientation="vertical"
     android:background="@color/smsp_white_color"
     android:layout_margin="5dp"
+    app:cardCornerRadius="5dp"
+    app:cardElevation="1dp"
     >
     <LinearLayout
         android:id="@+id/linearLayout_root_category"
@@ -19,18 +21,11 @@
             android:layout_height="wrap_content">
 
             <ImageView
-                android:id="@+id/styele_imageView3"
-                android:layout_width="190dp"
-                android:layout_height="170dp"
-                android:src="@drawable/image_shop_13"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageView
                 android:id="@+id/category_image"
                 android:layout_width="190dp"
                 android:layout_height="170dp"
-                android:src="@drawable/image_shop_13"
+                android:scaleType="centerCrop"
+                android:background="@drawable/small_family"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -50,192 +45,13 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="Style and Comfort"
-                android:padding="5dp"
                 android:textColor="#0C0C0C"
                 android:textSize="15sp"
-                android:background="@drawable/rectangle"
+                android:padding="5dp"
                 app:layout_constraintEnd_toEndOf="@+id/category_image"
                 app:layout_constraintStart_toStartOf="@+id/category_image"
                 app:layout_constraintTop_toBottomOf="@+id/category_image" />
-
-            <ImageView
-                android:id="@+id/style_imageView2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintBottom_toBottomOf="@+id/category_name"
-                app:layout_constraintEnd_toEndOf="@+id/category_name"
-                app:layout_constraintTop_toTopOf="@+id/category_name"
-                app:srcCompat="@drawable/ic_keyboard_arrow_right_black_24dp"
-                tools:ignore="VectorDrawableCompat" />
         </androidx.constraintlayout.widget.ConstraintLayout>
-<!--        <androidx.constraintlayout.widget.ConstraintLayout-->
-<!--            android:orientation="vertical" android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content">-->
-
-<!--            <ImageView-->
-<!--                android:id="@+id/imageView3"-->
-<!--                android:layout_width="190dp"-->
-<!--                android:layout_height="170dp"-->
-<!--                android:src="@drawable/image_shop_13"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toTopOf="parent" />-->
-
-<!--            <ImageView-->
-<!--                android:id="@+id/imageView"-->
-<!--                android:layout_width="190dp"-->
-<!--                android:layout_height="170dp"-->
-<!--                android:src="@drawable/image_shop_13"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toTopOf="parent" />-->
-
-<!--            <TextView-->
-<!--                android:id="@+id/textView"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:background="#090808"-->
-<!--                android:textColor="#ffffff"-->
-<!--                android:textSize="15sp"-->
-<!--                app:layout_constraintStart_toStartOf="@+id/imageView"-->
-<!--                app:layout_constraintTop_toTopOf="@+id/imageView"-->
-<!--                tools:text="SEATS 5" />-->
-
-<!--            <TextView-->
-<!--                android:id="@+id/textView2"-->
-<!--                android:layout_width="0dp"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="Style and Comfort"-->
-<!--                android:padding="5dp"-->
-<!--                android:textColor="#0C0C0C"-->
-<!--                android:textSize="15sp"-->
-<!--                android:background="@drawable/rectangle"-->
-<!--                app:layout_constraintEnd_toEndOf="@+id/imageView"-->
-<!--                app:layout_constraintStart_toStartOf="@+id/imageView"-->
-<!--                app:layout_constraintTop_toBottomOf="@+id/imageView" />-->
-
-<!--            <ImageView-->
-<!--                android:id="@+id/imageView2"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                app:layout_constraintBottom_toBottomOf="@+id/textView2"-->
-<!--                app:layout_constraintEnd_toEndOf="@+id/textView2"-->
-<!--                app:layout_constraintTop_toTopOf="@+id/textView2"-->
-<!--                app:srcCompat="@drawable/ic_keyboard_arrow_right_black_24dp"-->
-<!--                tools:ignore="VectorDrawableCompat" />-->
-<!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
-
     </LinearLayout>
-<!--    <LinearLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content">-->
-<!--        <androidx.constraintlayout.widget.ConstraintLayout-->
-<!--            android:orientation="vertical" android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content">-->
-
-<!--            <ImageView-->
-<!--                android:id="@+id/styele_imageView3"-->
-<!--                android:layout_width="190dp"-->
-<!--                android:layout_height="170dp"-->
-<!--                android:src="@drawable/image_shop_13"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toTopOf="parent" />-->
-
-<!--            <ImageView-->
-<!--                android:id="@+id/style_imageView"-->
-<!--                android:layout_width="190dp"-->
-<!--                android:layout_height="170dp"-->
-<!--                android:src="@drawable/image_shop_13"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toTopOf="parent" />-->
-
-<!--            <TextView-->
-<!--                android:id="@+id/style_textView"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:background="#090808"-->
-<!--                android:textColor="#ffffff"-->
-<!--                android:textSize="15sp"-->
-<!--                app:layout_constraintStart_toStartOf="@+id/style_imageView"-->
-<!--                app:layout_constraintTop_toTopOf="@+id/style_imageView"-->
-<!--                tools:text="SEATS 5" />-->
-
-<!--            <TextView-->
-<!--                android:id="@+id/style_textView2"-->
-<!--                android:layout_width="0dp"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="Style and Comfort"-->
-<!--                android:padding="5dp"-->
-<!--                android:textColor="#0C0C0C"-->
-<!--                android:textSize="15sp"-->
-<!--                android:background="@drawable/rectangle"-->
-<!--                app:layout_constraintEnd_toEndOf="@+id/style_imageView"-->
-<!--                app:layout_constraintStart_toStartOf="@+id/style_imageView"-->
-<!--                app:layout_constraintTop_toBottomOf="@+id/style_imageView" />-->
-
-<!--            <ImageView-->
-<!--                android:id="@+id/style_imageView2"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                app:layout_constraintBottom_toBottomOf="@+id/style_textView2"-->
-<!--                app:layout_constraintEnd_toEndOf="@+id/style_textView2"-->
-<!--                app:layout_constraintTop_toTopOf="@+id/style_textView2"-->
-<!--                app:srcCompat="@drawable/ic_keyboard_arrow_right_black_24dp"-->
-<!--                tools:ignore="VectorDrawableCompat" />-->
-<!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
-<!--        <androidx.constraintlayout.widget.ConstraintLayout-->
-<!--            android:orientation="vertical" android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content">-->
-
-<!--            <ImageView-->
-<!--                android:id="@+id/imageView3"-->
-<!--                android:layout_width="190dp"-->
-<!--                android:layout_height="170dp"-->
-<!--                android:src="@drawable/image_shop_13"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toTopOf="parent" />-->
-
-<!--            <ImageView-->
-<!--                android:id="@+id/imageView"-->
-<!--                android:layout_width="190dp"-->
-<!--                android:layout_height="170dp"-->
-<!--                android:src="@drawable/image_shop_13"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toTopOf="parent" />-->
-
-<!--            <TextView-->
-<!--                android:id="@+id/textView"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:background="#090808"-->
-<!--                android:textColor="#ffffff"-->
-<!--                android:textSize="15sp"-->
-<!--                app:layout_constraintStart_toStartOf="@+id/imageView"-->
-<!--                app:layout_constraintTop_toTopOf="@+id/imageView"-->
-<!--                tools:text="SEATS 5" />-->
-
-<!--            <TextView-->
-<!--                android:id="@+id/textView2"-->
-<!--                android:layout_width="0dp"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="Style and Comfort"-->
-<!--                android:padding="5dp"-->
-<!--                android:textColor="#0C0C0C"-->
-<!--                android:textSize="15sp"-->
-<!--                android:background="@drawable/rectangle"-->
-<!--                app:layout_constraintEnd_toEndOf="@+id/imageView"-->
-<!--                app:layout_constraintStart_toStartOf="@+id/imageView"-->
-<!--                app:layout_constraintTop_toBottomOf="@+id/imageView" />-->
-
-<!--            <ImageView-->
-<!--                android:id="@+id/imageView2"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                app:layout_constraintBottom_toBottomOf="@+id/textView2"-->
-<!--                app:layout_constraintEnd_toEndOf="@+id/textView2"-->
-<!--                app:layout_constraintTop_toTopOf="@+id/textView2"-->
-<!--                app:srcCompat="@drawable/ic_keyboard_arrow_right_black_24dp"-->
-<!--                tools:ignore="VectorDrawableCompat" />-->
-<!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
-
-<!--    </LinearLayout>-->
-</androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.cardview.widget.CardView>
 

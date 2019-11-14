@@ -48,10 +48,10 @@ public class DiscoverFragment extends Fragment {
 //        List<Category> categories = new ArrayList<Category>();
 //        categories.add(new Category("style and luxury","6 seats"));
 //        categories.add(new Category("style and luxury","6 seats"));
-        List<Category> category1 = Arrays.asList(new Category("Small Family","5 seats"),new Category("Big Family","6 seats"));
-        List<Category> category2 = Arrays.asList(new Category("Good Fuel Comsumption",""),new Category("Car Shape",""));
-        List<Category> category3 = Arrays.asList(new Category("Luxury",""),new Category("Confort",""));
-        List<Category> category4 = Arrays.asList(new Category("Upcountry Car",""));
+        List<Category> category1 = Arrays.asList(new Category("Small Family","5 seats",R.drawable.small_family),new Category("Big Family","6 seats",R.drawable.big_family));
+        List<Category> category2 = Arrays.asList(new Category("Style and Comfort","",R.drawable.style_and_comfort),new Category("Eco-Friendly","",R.drawable.eco_friendly));
+        List<Category> category3 = Arrays.asList(new Category("Luxury","",R.drawable.luxury),new Category("Sun Lover","",R.drawable.image_car1));
+        List<Category> category4 = Arrays.asList(new Category("Trucks","",R.drawable.truck));
 //        RecyclerView recyclerView = root.findViewById(R.id.family_recyclerView);
 //        categoriesAdapter = new CategoriesAdapter(getActivity(), categories);
 //        RecyclerView.LayoutManager manager = new GridLayoutManager(getActivity(), 2);
@@ -80,7 +80,6 @@ public class DiscoverFragment extends Fragment {
         recyclerView.setLayoutManager(manager);
 //        recyclerView.addItemDecoration(new GridSpacingItemDecoration(1, dpToPx(4), true));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.setBackgroundResource(R.color.amber_50);
         final CategoriesAdapter categoriesAdapter = new CategoriesAdapter(getActivity(), list);
         categoriesAdapter.setOnClick(new CategoriesAdapter.OnItemClicked() {
             @Override

@@ -44,22 +44,46 @@ public class StepsFragment extends Fragment {
         questions = new ArrayList<>();
         switch (category){
             case "Small Family":
-                questions.add(new Question("Best for dfdf seats","Tested by certified staticians"));
-                questions.add(new Question("Best for booster seats","Tested by certified staticians"));
-                questions.add(new Question("Best for booster seats","Tested by certified staticians"));
-                questions.add(new Question("Best for booster seats","Tested by certified staticians"));
+                questions.add(new Question("Best for Infant Car Seat","Tested by our certified technicians."));
+                questions.add(new Question("Best-Rated for Safety","Highest IIHS crash and rollover scores"));
+                questions.add(new Question("Most fuel-efficient SUVs","Combined mpg of 30 or greater"));
+                questions.add(new Question("Just show me what's popular","I have no preference"));
                 break;
             case "Big Family":
-                questions.add(new Question("Best for booster seats","Tested by certified staticians"));
-                questions.add(new Question("Best for booster seats","Tested by certified staticians"));
-                questions.add(new Question("Best for booster seats","Tested by certified staticians"));
-                questions.add(new Question("Best for booster seats","Tested by certified staticians"));
+                questions.add(new Question("Best for booster seats","Tested by our certified technicians."));
+                questions.add(new Question("2nd-Row Captain's Chairs","For easy access to the third row"));
+                questions.add(new Question("Most Fuel-Efficient","Combined mpg of 30 or greater"));
+                questions.add(new Question("Just show me what's popular","I have no preference"));
                 break;
             case "Luxury":
-                questions.add(new Question("Best for booster seats","Tested by certified staticians"));
-                questions.add(new Question("Best for booster seats","Tested by certified staticians"));
-                questions.add(new Question("Best for booster seats","Tested by certified staticians"));
-                questions.add(new Question("Best for booster seats","Tested by certified staticians"));
+                questions.add(new Question("Classy Coupes","When the backseat takes a backseat"));
+                questions.add(new Question("Fabulous Four-Doors","Prestigious style in a refined ride"));
+                questions.add(new Question("Sitting Tall","Lavish SUVs and crossover."));
+                questions.add(new Question("Just show me what's popular","I have no preference"));
+                break;
+            case "Style and Comfort":
+                questions.add(new Question("Luxury","Driving refinement,upload stying and prestige"));
+                questions.add(new Question("Best-Rated for Safety","Highest IIHS crash and rollover scores"));
+                questions.add(new Question("Smartphone Connectivity","Has Apple Carplay or Android Auto or both"));
+                questions.add(new Question("Just show me what's popular","I have no preference"));
+                break;
+            case "Eco-Friendly":
+                questions.add(new Question("All-Electric Power","Zippy,silent driving with no emissions"));
+                questions.add(new Question("Plug-in Hybrids","Gas-engine backup for the open road."));
+                questions.add(new Question("Most Fuel Efficient","Combined mpg of 40 or greater,no EVs"));
+                questions.add(new Question("Just show me what's popular","I have no preference"));
+                break;
+            case "Sun Lover":
+                questions.add(new Question("Beachgoers","Soft-top style for everyone."));
+                questions.add(new Question("Retractable hardtops","Confortable, quite and secure driving."));
+                questions.add(new Question("All-Wheel Drive","A convertible for all seasons."));
+                questions.add(new Question("Just show me what's popular","I have no preference"));
+                break;
+            case "Trucks":
+                questions.add(new Question("Max Towing","Pickups that tow 100000+ pounds"));
+                questions.add(new Question("Off-Road Warrior","Designed to go off the beaten path."));
+                questions.add(new Question("Diesel Muscle","When mpg, torque and towing matter most."));
+                questions.add(new Question("Just show me what's popular","I have no preference"));
                 break;
             default:
                 questions.add(new Question("Just show me whats popular","I have no preferene"));

@@ -47,10 +47,7 @@ List<Category> items;
         });
 
         viewHolder.image.setVisibility(View.VISIBLE);
-        Picasso.get().load(R.drawable.image_car1)
-            .placeholder(R.drawable.image_car1)
-            .error(R.drawable.image_car4)
-            .into(viewHolder.image);
+        viewHolder.image.setBackgroundResource(car.getImageId());
     }
     public int getItemCount(){
         return items.size();

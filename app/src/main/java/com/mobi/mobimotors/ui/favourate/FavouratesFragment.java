@@ -100,7 +100,6 @@ public class FavouratesFragment extends Fragment {
                         list.add(value);
                     }
                     Log.d("MAP",make.toString());
-                    Toast.makeText(getActivity(), String.valueOf(list.size()), Toast.LENGTH_SHORT).show();
                     initSpinner(rootView,R.id.spinner3,list );
 
                 } catch (JSONException e) {
