@@ -18,11 +18,53 @@
                 android:gravity="center_horizontal"
                 android:orientation="vertical">
 
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/grey_5">
+
+                <TextView
+                    android:id="@+id/login_textview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Log in to your MobiMotors account"
+                    android:textColor="@android:color/black"
+                    android:textSize="15sp"
+                    android:layout_marginLeft="5dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="5dp"/>
+
+                <TextView
+                    android:id="@+id/login_textview_subtitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Sync My Likes, History and Selections"
+                    android:textColor="@color/grey_500"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/login_textview"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="5dp"/>
+
+                <Button
+                    android:id="@+id/login_button"
+                    android:layout_width="60dp"
+                    android:layout_height="30dp"
+                    android:background="@color/colorPrimary"
+                    android:text="LOG IN"
+                    android:textColor="@color/white"
+                    android:layout_margin="7dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/login_textview_subtitle"
+                    app:layout_constraintTop_toBottomOf="@+id/login_textview_subtitle" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
                 <com.mikhaellopez.circularimageview.CircularImageView
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_marginTop="@dimen/spacing_large"
-                    android:src="@drawable/niko"
+                    app:srcCompat="@drawable/ic_user_profile"
                     app:civ_border="true"
                     app:civ_shadow="true"
                     app:civ_shadow_radius="0"
@@ -71,7 +113,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="3 likes"
+                        android:text="0 likes"
                         android:textColor="@color/grey_40"
                         android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"/>
                     </LinearLayout>

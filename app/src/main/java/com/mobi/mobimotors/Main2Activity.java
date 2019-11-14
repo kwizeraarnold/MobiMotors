@@ -3,6 +3,7 @@ package com.mobi.mobimotors;
 import android.os.Bundle;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.bottomnavigation.LabelVisibilityMode;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
@@ -32,6 +33,7 @@ public class Main2Activity extends AppCompatActivity {
 
         //setup the bottom navigation to be used with the navigation controller
         NavigationUI.setupWithNavController(navView, navController);
+        navView.setLabelVisibilityMode(LabelVisibilityMode.LABEL_VISIBILITY_LABELED);
 
     }
 

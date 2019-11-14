@@ -1,18 +1,16 @@
 package com.mobi.mobimotors.ui.favourate;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.android.volley.Request;
@@ -23,9 +21,9 @@ import com.android.volley.toolbox.HurlStack;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.chivorn.smartmaterialspinner.SmartMaterialSpinner;
-import com.mobi.mobimotors.MainActivity;
+import com.google.android.material.snackbar.Snackbar;
+import com.mobi.mobimotors.CarListActivity;
 import com.mobi.mobimotors.R;
-import com.mobi.mobimotors.models.Car;
 import com.mobi.mobimotors.ui.home.HomeFragment;
 
 import org.json.JSONArray;
@@ -44,6 +42,7 @@ public class FavouratesFragment extends Fragment {
     private HashMap<String,String>make,model;
     ArrayList<String> list,modelList;
     View rootView;
+    int selectedModelId,selectedMakeId;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -57,10 +56,22 @@ public class FavouratesFragment extends Fragment {
         notificationsViewModel =
                 ViewModelProviders.of(this).get(FavouratesViewModel.class);
         View root = inflater.inflate(R.layout.activity_search, container, false);
+        SmartMaterialSpinner  spinner = root.findViewById(R.id.spinner1);
+        spinner.setItem(Arrays.asList("New", "Used", "Both"));
 
-//        initSpinner(root,R.id.spinner1,new ArrayList<String>(make.values()));
-//        initSpinner(root,R.id.spinner2,new ArrayList<String>(model.values()));
+        //set click lister to search button
+        root.findViewById(R.id.search_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(selectedMakeId!=0&&selectedModelId!=0){
+                    Toast.makeText(getActivity(), String.valueOf(selectedModelId), Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(getActivity(), CarListActivity.class));
 
+                }else{
+                    Toast.makeText(getActivity(), "Please first selecte a Car Brand and Car Model", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
 
         rootView = root;
         return root;
@@ -75,6 +86,7 @@ public class FavouratesFragment extends Fragment {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 Toast.makeText(getActivity(),optionsList.get(position)+String.valueOf(position),
                         Toast.LENGTH_SHORT).show();
+                selectedMakeId = position+1;
                 fetchMakeModels(String.valueOf(position+1),model);
             }
 
@@ -100,7 +112,7 @@ public class FavouratesFragment extends Fragment {
                         list.add(value);
                     }
                     Log.d("MAP",make.toString());
-                    initSpinner(rootView,R.id.spinner3,list );
+                    initSpinner(rootView,R.id.spinner2,list );
 
                 } catch (JSONException e) {
 
@@ -133,8 +145,28 @@ public class FavouratesFragment extends Fragment {
                         map.put(String.valueOf(id),value);
                         modelList.add(value);
                     }
-                    SmartMaterialSpinner  spinner = rootView.findViewById(R.id.spinner2);
+                    SmartMaterialSpinner  spinner = rootView.findViewById(R.id.spinner3);
                     spinner.setItem(modelList);
+                    spinner.setSearchable(true);
+                    spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                        @Override
+                        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                            final String modelText = modelList.get(position);
+                            for (String m:model.keySet()
+                                 ) {
+                                String value = model.get(m);
+                                if(value.equals(modelText)){
+                                   selectedModelId = Integer.valueOf(m);
+                                   break;
+                                }
+                            }
+                        }
+
+                        @Override
+                        public void onNothingSelected(AdapterView<?> parent) {
+
+                        }
+                    });
 
                 } catch (JSONException e) {
 
@@ -152,4 +184,5 @@ public class FavouratesFragment extends Fragment {
 
         requestQueue.add(allCarsRequest);
     }
+
 }
