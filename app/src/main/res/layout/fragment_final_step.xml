@@ -60,7 +60,7 @@
                     app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/ic_user_profile" />
+                    app:srcCompat="@drawable/eco_friendly" />
 
                 <View
                     android:id="@+id/divider2"

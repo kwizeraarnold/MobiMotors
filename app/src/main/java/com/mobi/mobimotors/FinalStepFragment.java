@@ -61,7 +61,7 @@ public class FinalStepFragment extends Fragment {
 
         //setup the first car
         Car car = possibleCarLikesList.get(0);
-        Picasso.get().load(R.drawable.image_car5).into(carImage);
+        Picasso.get().load(R.drawable.eco_friendly).into(carImage);
         //set title
         carTitle.setText(car.getName());
         //set the price
@@ -125,7 +125,7 @@ public class FinalStepFragment extends Fragment {
         }
         //setup the first car
         Car car = possibleCarLikesList.get(pos);
-        Picasso.get().load(R.drawable.image_car5).into(carImage);
+        Picasso.get().load(R.drawable.ic_launcher).into(carImage);
         //set title
         carTitle.setText(car.getName());
         //set the price
@@ -134,10 +134,10 @@ public class FinalStepFragment extends Fragment {
     }
 
     private void populateAdapter() {
-        possibleCarLikesList.add(new Car("Toyota Prado","4000,000",null,null));
+        possibleCarLikesList.add(new Car("Toyota Prado","4000,000","http://www.blackbooksuganda.com/stock/CKo11hwish/main.jpg",null));
         possibleCarLikesList.add(new Car("Toyota Wish","2000,000",null,null));
         possibleCarLikesList.add(new Car("Toyota Laugmbaug","6000,000",null,null));
-        possibleCarLikesList.add(new Car("Toyota Noah","7000,000",null,null));
+        possibleCarLikesList.add(new Car("Toyota Noah","7000,000","http://www.blackbooksuganda.com/stock/CKo11hwish/main.jpg",null));
         possibleCarLikesList.add(new Car("Toyota Noah","7000,000",null,null));
         possibleCarLikesList.add(new Car("Toyota Noah","7000,000",null,null));
         possibleCarLikesList.add(new Car("Toyota Noah","7000,000",null,null));
